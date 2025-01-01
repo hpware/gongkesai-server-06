@@ -1,4 +1,4 @@
-u="" # 使用者開頭名稱
+u="" # Username starts with?
 
 for i in $(seq -f "%02g" 1 1 50)
 
