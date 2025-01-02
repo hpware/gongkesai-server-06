@@ -4,17 +4,18 @@
     <title>工科賽 06 電腦維護</title>
   </head>
   <body>
-# 工科賽 06 電腦維護
-如果需要幫助可以在這裡的Issues上問，我有時間會上來看；也可以[Email](mailto:hw+server06-help@yuanhau.com)或[IG私訊](https://instagram.com/yh_.5_26)我。
-## /docs
-幫助區
-## /fedora 或 /windows
-為Scripts
+    <div class="md" id="md"></div>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script>
-  function func1() {
-    window.location.href="https://github.com/hpware/gongkesai-server-06.git";
-  };
-  setTimeout(func1, 1000);
+  async function getMD() {
+    try {
+      const res = await fetch("https://cdn.jsdelivr.net/gh/hpware/gongkesai-server-06@main/README.md");
+      const text = await res.text;
+      document.getElementById("md").innerHTML = marked.parse(text);
+    } catch (e) {
+      document.getElementById("md").innerHTML = marked.parse("# Error");
+    }
+  }
 </script>
 </body>
 </html>
