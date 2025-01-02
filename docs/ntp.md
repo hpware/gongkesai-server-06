@@ -1,4 +1,4 @@
-#
+# NTP 服務
 在 bash 裡寫
 ```bash
 firewall-cmd --add-service=ntp
