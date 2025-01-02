@@ -3,6 +3,8 @@ $domain="ad.com" # AD 網域
 $user="AD" # 使用者開頭
 $count=1..10 #多少？ 
 foreach($i in $count) {
-	$num=$i.ToString('00')
-	Remove-AdUser -Identity "$user$num" -Confirm # UNCOMPELTED!
+ if ($i % 2 -eq 0) {
+	 $num=$i.ToString('00')
+	 Remove-AdUser -Identity "$user$num" -Confirm:$false 
+ }
 }
