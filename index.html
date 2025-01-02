@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-Hant">
   <head>
     <title>工科賽 06 電腦維護</title>
@@ -6,17 +6,17 @@
   <body>
     <div class="md" id="md"></div>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-<script>
-  async function getMD() {
-    try {
-      const res = await fetch("https://cdn.jsdelivr.net/gh/hpware/gongkesai-server-06@main/README.md");
-      const text = await res.text;
-      document.getElementById("md").innerHTML = marked.parse(text);
-    } catch (e) {
-      document.getElementById("md").innerHTML = marked.parse("# Error");
+  <script>
+    async function getMD() {
+      try {
+        const res = await fetch("https://cdn.jsdelivr.net/gh/hpware/gongkesai-server-06@main/README.md");
+        const text = await res.text();
+        document.getElementById("md").innerHTML = marked.parse(text);
+      } catch (e) {
+        document.getElementById("md").innerHTML = marked.parse("# Error");
+      }
     }
-  }
-  getMD();
-</script>
+    getMD();
+  </script>
 </body>
 </html>
