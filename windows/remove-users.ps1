@@ -4,5 +4,5 @@ $user="AD" # 使用者開頭
 $count=1..10 #多少？ 
 foreach($i in $count) {
 	$num=$i.ToString('00')
-	Remove-AdUser -Identity "$user$num" -Confirm # UNCOMPELTED!
+	Remove-AdUser -Identity "$user$num" -Confirm:$false #E!
 }
