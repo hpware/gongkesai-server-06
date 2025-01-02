@@ -1,0 +1,51 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+html,body {
+  text-align:center;
+  justify-content:center;
+  align-items:center;
+  font-family: "Fira Code";
+  color:black;
+}
+a {
+  color: rgb(71, 166, 255);
+  transition: all 300ms;
+}
+a:hover {
+  color: rgb(53, 129, 201);
+}
+nav {
+hr {
+  align-items: center;
+  text-align: center;
+  width: 80%;
+}
+ul {
+  display: inline-flexbox;
+  text-align: left;
+  list-style-position: inside;
+  unicode-bidi: isolate;
+}
+ol {
+  display: inline-block;
+  text-align: left;
+  list-style-type: decimal;
+  unicode-bidi: isolate;
+}
+li {
+  display: list-item;
+  margin-left: 40px;
+  text-align: left;
+}
+  /*Animations*/
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
