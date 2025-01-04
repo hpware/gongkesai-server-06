@@ -5,3 +5,8 @@
 
 ## /fedora 或 /windows
 為Scripts
+
+# 主要網站
+https://s06.edu.yuanhau.com
+
+Source Code: https://github.com/hpware/s06edu-guide-docs-site
