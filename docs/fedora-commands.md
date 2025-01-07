@@ -4,7 +4,7 @@ hostnamectl set-hostname {{ hostname }}
 ```
 ## Delete User
 ```bash
-userde -r {{ user }}
+userdel -r {{ user }}
 ```
 ## Add Group
 ```bash
@@ -46,8 +46,8 @@ vi /etc/samba/smb.conf
 ```
 # Mass add Samba Share Users
 ```bash
-user="Feusr"
-pwd="Skills@2024"
+user="user"
+pwd="password-here"
 for item in $(seq -f "%02g" 1 1 50)
 do
 	echo -ne "$pwd\n$pwd\n" | smbpasswd -a -s $u$i
@@ -87,4 +87,4 @@ include "/etc/nftables/{{ name }}.conf"
 ```
 ### Restart 
 ```bash
-shutdown -r
+shutdown -r now
