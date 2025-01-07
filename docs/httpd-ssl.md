@@ -1,4 +1,4 @@
-## SSL
+# SSL
 ```bash
 cd /etc/pki/tls/certs
 openssl genrsa -out {{ website name }}.key
