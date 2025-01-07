@@ -9,6 +9,6 @@
 為Scripts
 
 # 主要網站
-https://s06.edu.yuanhau.com
+https://gs06.edu.yhw.tw
 
 Source Code: https://github.com/hpware/gongkesai-server-06-vite
