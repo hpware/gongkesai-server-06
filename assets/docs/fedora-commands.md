@@ -1,39 +1,47 @@
-## Change Host Name
+## 改變主機名稱
 ```bash
 hostnamectl set-hostname {{ hostname }}
 ```
-## Delete User
+## 刪除使用者
 ```bash
 userde -r {{ user }}
 ```
-## Add Group
+## 增加群組
 ```bash
 groupadd {{ group }}
 ```
-## Add User
+## 增加使用者
 ```bash
 useradd {{ user }}
 ```
 
-## Check User
+## 使用者資訊
 ```bash
 id {{ user }}
 ```
-# Change SSH Port
+# 改 ssh 的端口
 ```bash
-vi /etc/ssh/sshd_config
+nano /etc/ssh/sshd_config
 ```
-Add 
+加
 ```conf
 Port {{ port }}
 PermitRootLogin no
 AllowUsers {{ user (Wildcard add ?) }} {{ user  (last num)}}
 ```
-# Change Samba Sharing config
+# 改Samba分享的設定
 ```bash
 rm -rf /etc/samba/smb.conf
-vi /etc/samba/smb.conf
+nano /etc/samba/smb.conf
 ```
+
+解釋:
+
+我用 rm -rf 來刪除預設的smb的config檔
+
+在編輯並創立smb的檔案
+
+config: 
 ```conf
 [global]
 	workgroup = SAMBA
@@ -44,16 +52,16 @@ vi /etc/samba/smb.conf
 	writeable = yes
 	valid users = {{ group }}
 ```
-# Mass add Samba Share Users
+# 大量增加smb的使用者
 ```bash
-user="Feusr"
-pwd="Skills@2024"
+user="username"
+pwd="password-here"
 for item in $(seq -f "%02g" 1 1 50)
 do
 	echo -ne "$pwd\n$pwd\n" | smbpasswd -a -s $u$i
 done
 ```
-# Disable Firewall-cmd
+# 關閉 Firewall-cmd
 ```bash
 systemctl stop firewalld
 systemctl disable firewalld
@@ -79,7 +87,7 @@ iptables-nft -A INPUT -p tcp --dport 139 -j ACCEPT
 iptables-nft -A INPUT -p tcp --dport 445 -j ACCEPT
 touch /etc/nftables/{{ name }}.nft
 nft list ruleset | cat >> /etc/nftables/{{ name }}.nft
-vi /etc/nftables/nftables.conf
+nano /etc/nftables/nftables.conf
 ```
 ### Config /etc/nftables/nftables.conf
 ```conf 
